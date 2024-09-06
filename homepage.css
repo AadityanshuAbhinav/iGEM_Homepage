@@ -1,0 +1,167 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.animation{
+    height: 300px;
+    width: 100vw;
+    background-color: gray;
+}
+.white-head{
+    font-size: 78px;
+    color: white;
+    font-family: 'League Spartan', sans-serif;
+}
+.black-head{
+    font-size: 78px;
+    color: rgb(0, 0, 0);
+    font-family: 'League Spartan', sans-serif;
+}
+.black-para{
+    font-family: 'Sanchez', serif;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.white-para{
+    font-family: 'Sanchez', serif;
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.box{
+    background-color: #d9d9d9;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.b2{
+    width: 40%;
+    margin-top: 40px;
+}
+.b2 p{
+    margin-top: -30px;
+}
+
+.blue{
+    background-color: #004add;
+}
+.photo{
+    background-color: rgb(225, 219, 219);
+    height: 70%;
+    width: 70%;
+    border-radius: 20%;
+}
+.photo-color{
+    background-color: #004add;
+}
+
+.b1{
+    height: 100%;
+    width: 30%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+}
+
+.b3{
+    margin-top: 40px;
+    width: 60%;
+}
+.b3 p{
+    margin-left: 300px;
+    width: 70%;
+    margin-top: 160px;
+}
+
+.b4{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+.b4 h2{
+    margin-left: 300px;
+}
+.b4 p{
+    margin-top: -30px;
+    margin-left: 200px;
+    width: 60%;
+}
+
+.box-rev{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.b5{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 70px;
+    margin-left: 40px;
+}
+
+.b6{
+    margin-top: 40px;
+    width: 60%;
+}
+
+.split p{
+    margin-top: -50px;
+    width: 70%;
+}
+.split1 p{
+    width: 100%;
+}
+.split1{
+    width: 80%;
+    margin-left: 25%;
+    margin-top: 80px;
+}
+.b7{
+    width: 50%;
+    margin-top: 140px;
+    margin-left: 200px;
+}
+.b7 p{
+    margin-top: -30px;
+}
+.b8{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+}
+.b8 p{
+    margin-top: -30px;
+    width: 90%;
+}
+.c-dashed-line__path {
+	animation: c-dashed-line-path 3s ease-in-out infinite alternate;
+	fill: none;
+	stroke: #31CC89;
+	stroke-dasharray: 940; /* this is the entire length of the line */
+	stroke-dashoffset: 940; /* this is the entire length of the line */
+	stroke-width: 10;
+}
+
+.c-dashed-line__dash {
+	fill: none;
+	stroke: #FFFFFF; /* this must match the background color */
+	stroke-dasharray: 16 10; /* draws a 10px dash line with a 16px gap between */
+	stroke-width: 12; /* make the dashed line slightly bigger than the one it's covering */
+}
+
+@keyframes c-dashed-line-path {
+	from {
+		stroke-dashoffset: 940;
+	}
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
