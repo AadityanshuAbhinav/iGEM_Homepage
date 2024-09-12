@@ -9,7 +9,7 @@
   stroke-width: 2;
 }
 
-#curve {
+#curve{
   fill: none;
   stroke: #000;
   stroke-width: 4;
@@ -20,6 +20,8 @@
 #mysvg{
     position: absolute;
 }
+
+
 
     </style>
     <title>iGEM Homepage</title>
@@ -32,15 +34,41 @@
         <div class="b1"><div class="photo"></div></div><div class="b2"><h2 class="white-head">Heading</h2><p class="white-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p></div>
     </div>
     <div class="box">
-        <svg id="mysvg" width="100%" height="3900">
-       
-            <path id="curve" d="M1050,0 Q1000,270 730,250 T450,600 Q500,1390 00,1190 M1270,1200 Q1000,1250 1070,1700 T800,2120 Q450,2100 480,2350 Q600,3000 0,3000" />
+        <svg id="mysvg" width="100%" height="3170px">
+            <path id="curve" d="M1050,0 Q1000,270 730,250 T450,600 Q500,1390 00,1190 M1270,1200 Q1000,1250 1070,1700 T800,2120 Q450,2100 480,2350 Q600,3000 300,3000 " />
+            <!-- <path id="curve1" d="500,2800"></path> -->
             <!-- Circles at the key points -->
             <!-- <circle cx="760" cy="0" r="5" fill="red" />
             
             <circle cx="500" cy="200" r="5" fill="red" />
             <circle cx="180" cy="350" r="5" fill="red" /> -->
-        </svg>
+            <image id="movingImage" xlink:href="https://r2.erweima.ai/midjourney/1712246037_42b548d1a96d4256819b835faa513ae0.png" width="200" height="300"/>
+            <script>
+                document.addEventListener('scroll', function() {
+                    const path = document.getElementById('curve');
+                    const pathLength = path.getTotalLength();
+                    const scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+                    const point = path.getPointAtLength(scrollPercentage * pathLength);
+                    const nextPoint = path.getPointAtLength((scrollPercentage * pathLength) + 1);
+                
+                    const image = document.getElementById('movingImage');
+                    image.setAttribute('x', point.x - 90); // Center the image horizontally
+                    image.setAttribute('y', point.y - 135); // Adjusting to center the image
+                
+                    const newImageUrl = 'data:image/jpeg;base64,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'; // Replace with your new image URL
+                    const originalImageUrl = 'https://r2.erweima.ai/midjourney/1712246037_42b548d1a96d4256819b835faa513ae0.png'; // Original image URL
+                
+                    // Calculate the angle of the tangent
+                    const dx = nextPoint.x - point.x;
+                    const dy = nextPoint.y - point.y;
+                    const angle = Math.atan2(dy, dx) * (360 / Math.PI);
+                
+                    // Set the transform attribute to rotate the image
+                    image.setAttribute('transform', `rotate(${angle}, ${point.x}, ${point.y})`);
+                
+                    
+                });
+                </script>     </svg>
         <div class="b1"><div class="photo photo-color"></div></div><div class="b3"><h2 class="black-head">Heading</h2><p class="black-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p></div>
     </div>
     <div class="box blue">
@@ -60,11 +88,8 @@
     <div class="box">
         <div class="b1"><div class="photo photo-color"></div></div><div class="b7"><p class="black-para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p></div>
     </div>
-    <div class="box blue">
-        <div class="b1"><div class="photo"></div></div><div class="b8"><div><h2 class="white-head">Heading</h2><p class="white-para">Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, 
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris </p></div></div>
+    <div style="height: 300px;width: 100%;background-color: rgb(168, 48, 0);border-top: 2px red solid;border-top-right-radius: 35%;border-top-left-radius: 35%;">
+        
     </div>
    
     
